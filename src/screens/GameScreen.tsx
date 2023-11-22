@@ -1,10 +1,15 @@
 import Card from "../components/cards/Card"
-import { Container } from "@mui/material"
+import { Container, Button } from "@mui/material"
 
-function GameScreen() {
+type GameProp = {
+  showGameHandler: () => void;
+}
+
+function GameScreen({showGameHandler}: GameProp) {
   return (
     <Container>
         <Card />
+        <Button variant="contained" onClick={showGameHandler}>Start New Game</Button>
     </Container>
   )
 }

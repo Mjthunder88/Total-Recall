@@ -10,7 +10,11 @@ import {
   FormControlLabel,
 } from "@mui/material";
 
-function StartScreen() {
+type GameProp = {
+  showGameHandler: () => void;
+}
+
+function StartScreen({ showGameHandler }: GameProp) {
   return (
     <Box
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
@@ -22,11 +26,11 @@ function StartScreen() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          padding: "10rem",
-          justifyContent: "space-around",
+          padding: "8rem",
+          rowGap: "1rem",
         }}
       >
-        <Typography variant="h2">Total Recall</Typography>
+        <Typography variant="h2">Christmas Recall</Typography>
         <FormControl>
           <FormLabel>Choose Your Number Of Players:</FormLabel>
           <RadioGroup defaultValue="1 Player" row>
@@ -41,7 +45,7 @@ function StartScreen() {
               label="2 Players"
             />
           </RadioGroup>
-          <Button variant="outlined">Start Game</Button>
+          <Button variant="contained" onClick={showGameHandler}>Start Game</Button>
         </FormControl>
       </Paper>
     </Box>
